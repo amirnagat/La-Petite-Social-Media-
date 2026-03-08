@@ -1,4 +1,5 @@
 import { useState } from "react";
+// CSS animation-based marquee
 import clientTiptop from "@/assets/client-tiptop.png";
 import clientGanimTovim from "@/assets/client-ganim-tovim.jpg";
 
