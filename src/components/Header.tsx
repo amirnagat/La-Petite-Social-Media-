@@ -3,7 +3,7 @@ const Header = () => (
     <div className="container flex items-center justify-between h-16">
       <div className="flex flex-col items-start leading-none">
         <span className="text-xl font-black tracking-tight">La' petite</span>
-        <span className="text-[10px] font-medium text-muted-foreground tracking-wide">BY Amit Dasa</span>
+        <span className="text-[10px] font-medium text-muted-foreground tracking-wide -ml-1">BY Amit Dasa</span>
       </div>
       <a
         href="#contact"
