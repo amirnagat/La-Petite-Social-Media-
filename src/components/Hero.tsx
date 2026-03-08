@@ -10,7 +10,7 @@ const Hero = () =>
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.6 }}
-        className="h-20 md:h-28 mx-auto mb-10 object-contain"
+        className="h-32 md:h-44 mx-auto mb-10 object-contain"
       />
       <motion.h1
       initial={{ opacity: 0, y: 30 }}
