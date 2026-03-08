@@ -3,8 +3,8 @@ import socialIcons from "@/assets/social-icons.png";
 
 const Hero = () =>
 <section className="min-h-screen flex items-center justify-center pt-16">
-    <div className="container flex flex-col md:flex-row items-center gap-12">
-      <div className="flex-1 text-center md:text-right">
+    <div className="container flex flex-col items-center gap-12">
+      <div className="flex-1 text-center">
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
