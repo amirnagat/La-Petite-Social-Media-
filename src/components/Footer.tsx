@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
-import logo from "@/assets/logo.jpeg";
+import logo from "@/assets/logo.png";
 
 const Footer = () => {
   const [form, setForm] = useState({ name: "", phone: "", message: "" });
