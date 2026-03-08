@@ -14,10 +14,10 @@ const Hero = () =>
           La'    Petite
         </motion.h1>
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: 0.15 }}
-          className="mt-4 text-2xl md:text-4xl lg:text-5xl font-bold tracking-widest text-muted-foreground">
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.15 }}
+        className="mt-4 text-3xl md:text-4xl lg:text-5xl font-bold tracking-widest text-muted-foreground">
           SOCIAL MEDIA
         </motion.div>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
