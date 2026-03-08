@@ -12,22 +12,23 @@ const Hero = () =>
         className="text-4xl md:text-6xl font-black leading-tight tracking-tight lg:text-9xl text-center">
         
           La'    Petite
+
+
+
+  
+               
           <br />
-          סושיאל ל
-          <br />
-          SOCIAL MEDIA
+          תוצאות לעסקים
         </motion.h1>
-        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
-      className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }} className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
         
           אסטרטגיה, קריאייטיב והפקה שמביאים לקוחות.
         </motion.p>
-        <motion.a
-        href="#contact"
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.4 }}
-        className="inline-block mt-10 bg-primary text-primary-foreground px-10 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity">
+        <motion.a href="#contact"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.7, delay: 0.4 }}
+      className="inline-block mt-10 bg-primary text-primary-foreground px-10 py-4 rounded-lg text-lg font-semibold hover:opacity-90 transition-opacity">
         
           בואו נדבר
         </motion.a>
