@@ -1,7 +1,14 @@
 import { motion } from "framer-motion";
+import clientTiptop from "@/assets/client-tiptop.png";
 
-const clients = [
-  { name: "Client 1", instagram: "https://instagram.com/" },
+type Client = {
+  name: string;
+  instagram: string;
+  logo?: string;
+};
+
+const clients: Client[] = [
+  { name: "טיפטוף", instagram: "https://instagram.com/", logo: clientTiptop },
   { name: "Client 2", instagram: "https://instagram.com/" },
   { name: "Client 3", instagram: "https://instagram.com/" },
   { name: "Client 4", instagram: "https://instagram.com/" },
@@ -11,9 +18,13 @@ const clients = [
   { name: "Client 8", instagram: "https://instagram.com/" },
 ];
 
-const LogoPlaceholder = ({ name }: { name: string }) => (
-  <div className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-muted border border-border flex items-center justify-center shrink-0">
-    <span className="text-xs text-muted-foreground font-medium">{name}</span>
+const ClientLogo = ({ client }: { client: Client }) => (
+  <div className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-muted border border-border flex items-center justify-center shrink-0 p-3">
+    {client.logo ? (
+      <img src={client.logo} alt={client.name} className="w-full h-full object-contain" />
+    ) : (
+      <span className="text-xs text-muted-foreground font-medium">{client.name}</span>
+    )}
   </div>
 );
 
