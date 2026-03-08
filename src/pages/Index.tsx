@@ -4,6 +4,7 @@ import ClientsBar from "@/components/ClientsBar";
 import Portfolio from "@/components/Portfolio";
 import Services from "@/components/Services";
 import Workflow from "@/components/Workflow";
+import AboutMe from "@/components/AboutMe";
 import Stats from "@/components/Stats";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
@@ -16,6 +17,7 @@ const Index = () => (
     <Portfolio />
     <Services />
     <Workflow />
+    <AboutMe />
     <Stats />
     <Footer />
     <WhatsAppButton />
