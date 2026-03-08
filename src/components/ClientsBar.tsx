@@ -8,7 +8,7 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: "טיפטוף", instagram: "https://instagram.com/", logo: clientTiptop },
+  { name: "טיפטוף", instagram: "https://www.instagram.com/tiftuf.gardening.center/", logo: clientTiptop },
   { name: "Client 2", instagram: "https://instagram.com/" },
   { name: "Client 3", instagram: "https://instagram.com/" },
   { name: "Client 4", instagram: "https://instagram.com/" },
