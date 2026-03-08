@@ -20,9 +20,6 @@ const items: PortfolioItem[] = [
   { id: 0, category: "Reels", type: "video", src: "/videos/portfolio-1.mp4" },
   { id: 1, category: "עיצוב פיד", type: "video", src: "/videos/portfolio-2.mp4" },
   { id: 2, category: "אסטרטגיה", type: "carousel", images: [brca1, brca2, brca3, brca4, brca5, brca6] },
-  { id: 3, category: "Reels", type: "placeholder" },
-  { id: 4, category: "עיצוב פיד", type: "placeholder" },
-  { id: 5, category: "אסטרטגיה", type: "placeholder" },
 ];
 
 const PortfolioVideo = ({ src }: { src: string }) => {
