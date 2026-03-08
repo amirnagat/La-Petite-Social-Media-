@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
 import clientTiptop from "@/assets/client-tiptop.png";
 import clientGanimTovim from "@/assets/client-ganim-tovim.jpg";
 
@@ -31,6 +31,7 @@ const ClientLogo = ({ client }: {client: Client;}) =>
 
 const ClientsBar = () => {
   const doubled = [...clients, ...clients];
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <section className="py-12 md:py-16 overflow-hidden">
@@ -40,23 +41,19 @@ const ClientsBar = () => {
         </h3>
       </div>
 
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {/* Fade edges */}
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
 
-        <motion.div
-          className="flex gap-6 w-max"
-          animate={{ x: ["0%", "-50%"] }}
-          transition={{
-            x: {
-              repeat: Infinity,
-              repeatType: "loop",
-              duration: 25,
-              ease: "linear"
-            }
-          }}>
-          
+        <div
+          className="flex gap-6 w-max animate-marquee"
+          style={{ animationPlayState: isPaused ? "paused" : "running" }}
+        >
           {doubled.map((client, i) =>
           <a
             key={i}
@@ -64,14 +61,12 @@ const ClientsBar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-70 hover:opacity-100 transition-all duration-500 ease-out shrink-0">
-            
               <ClientLogo client={client} />
             </a>
           )}
-        </motion.div>
+        </div>
       </div>
     </section>);
-
 };
 
 export default ClientsBar;
