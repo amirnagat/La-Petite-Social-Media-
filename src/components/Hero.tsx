@@ -9,7 +9,7 @@ const Hero = () =>
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl md:text-6xl font-black leading-tight tracking-tight lg:text-9xl text-center">
+        className="md:text-6xl font-black leading-tight tracking-tight lg:text-9xl text-center text-7xl">
         
           La'    Petite
         </motion.h1>
