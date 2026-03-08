@@ -2,9 +2,9 @@ import { motion } from "framer-motion";
 
 const stats = [
   { value: "1M+", label: "צפיות" },
-  { value: "50+", label: "לקוחות מרוצים" },
-  { value: "500+", label: "תכנים שהופקו" },
-  { value: "3+", label: "שנות ניסיון" },
+  { value: "2+", label: "לקוחות מרוצים" },
+  { value: "30+", label: "תכנים שהופקו" },
+  { value: "1+", label: "שנות ניסיון" },
 ];
 
 const Stats = () => (
