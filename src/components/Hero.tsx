@@ -9,17 +9,17 @@ const Hero = () =>
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
-        className="text-4xl md:text-6xl lg:text-7xl font-black leading-tight tracking-tight">
+        className="text-4xl md:text-6xl font-black leading-tight tracking-tight lg:text-9xl text-center">
         
-          ניהול סושיאל מבוסס
+          La'    Petite
+
+  
+               
           <br />
           תוצאות לעסקים
         </motion.h1>
-        <motion.p
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.7, delay: 0.2 }}
-        className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.2 }}
+      className="mt-6 text-lg md:text-xl text-muted-foreground max-w-2xl leading-relaxed">
         
           אסטרטגיה, קריאייטיב והפקה שמביאים לקוחות.
         </motion.p>
