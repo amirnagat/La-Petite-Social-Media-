@@ -1,7 +1,7 @@
 import { useState } from "react";
 // CSS animation-based marquee
-import clientTiptop from "@/assets/client-tiptop.png";
-import clientGanimTovim from "@/assets/client-ganim-tovim.jpg";
+import clientTiptop from "@/assets/client-tiptop-new.jpeg";
+import clientGanimTovim from "@/assets/client-ganim-tovim-new.jpg";
 
 type Client = {
   name: string;
@@ -9,7 +9,9 @@ type Client = {
   logo?: string;
 };
 
-const clients: Client[] = [];
+const clients: Client[] = [
+{ name: "טיפטוף", instagram: "https://www.instagram.com/tiftuf.gardening.center/", logo: clientTiptop },
+{ name: "גנים טובים", instagram: "https://instagram.com/", logo: clientGanimTovim }];
 
 
 const ClientLogo = ({ client }: {client: Client;}) =>
