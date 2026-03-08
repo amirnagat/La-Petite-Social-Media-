@@ -24,6 +24,7 @@ const PortfolioVideo = ({ src }: { src: string }) => {
     const video = videoRef.current;
     if (!video) return;
     if (video.paused) {
+      video.muted = false;
       video.play();
     } else {
       video.pause();
