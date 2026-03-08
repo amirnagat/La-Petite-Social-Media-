@@ -1,4 +1,5 @@
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, useAnimation } from "framer-motion";
 import clientTiptop from "@/assets/client-tiptop.png";
 import clientGanimTovim from "@/assets/client-ganim-tovim.jpg";
 
