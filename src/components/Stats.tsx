@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "1M+", label: "צפיות" },
+  { value: "50K+", label: "צפיות" },
   { value: "2+", label: "לקוחות מרוצים" },
   { value: "30+", label: "תכנים שהופקו" },
   { value: "1+", label: "שנות ניסיון" },
