@@ -25,7 +25,7 @@ const ClientLogo = ({ client }: {client: Client;}) =>
 
 
 const ClientsBar = () => {
-  const doubled = [...clients, ...clients];
+  const doubled = clients;
   const [isPaused, setIsPaused] = useState(false);
 
   return (
