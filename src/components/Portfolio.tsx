@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { useRef, useCallback } from "react";
 interface PortfolioItem {
   id: number;
   category: string;
@@ -15,6 +15,33 @@ const items: PortfolioItem[] = [
   { id: 4, category: "עיצוב פיד", type: "placeholder" },
   { id: 5, category: "אסטרטגיה", type: "placeholder" },
 ];
+
+const PortfolioVideo = ({ src }: { src: string }) => {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  const handleClick = useCallback((e: React.MouseEvent) => {
+    e.stopPropagation();
+    const video = videoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+    }
+  }, []);
+
+  return (
+    <video
+      ref={videoRef}
+      src={src}
+      className="absolute inset-0 w-full h-full object-cover"
+      muted
+      loop
+      playsInline
+      onClick={handleClick}
+    />
+  );
+};
 
 const Portfolio = () => (
   <section className="py-24">
@@ -39,16 +66,9 @@ const Portfolio = () => (
             className="group relative aspect-square bg-secondary rounded-xl overflow-hidden cursor-pointer"
           >
             {item.type === "video" && item.src && (
-              <video
-                src={item.src}
-                className="absolute inset-0 w-full h-full object-cover"
-                muted
-                loop
-                playsInline
-                autoPlay
-              />
+              <PortfolioVideo src={item.src} />
             )}
-            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 flex items-center justify-center">
+            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 flex items-center justify-center pointer-events-none">
               <span className="text-primary-foreground font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {item.category}
               </span>
