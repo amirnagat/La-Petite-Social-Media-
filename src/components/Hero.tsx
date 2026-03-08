@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logo from "@/assets/logo.png";
 
 const Hero = () =>
 <section className="min-h-screen flex items-center justify-center pt-16">
