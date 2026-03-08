@@ -132,11 +132,6 @@ const Portfolio = () => (
             {item.type === "carousel" && item.images && (
               <PortfolioCarousel images={item.images} />
             )}
-            <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 flex items-center justify-center pointer-events-none">
-              <span className="text-primary-foreground font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                {item.category}
-              </span>
-            </div>
           </motion.div>
         ))}
       </div>
