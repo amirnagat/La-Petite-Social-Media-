@@ -17,6 +17,7 @@ const Index = () => (
     <Portfolio />
     <Services />
     <Workflow />
+    <AboutMe />
     <Stats />
     <Footer />
     <WhatsAppButton />
