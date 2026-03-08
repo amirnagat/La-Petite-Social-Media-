@@ -9,25 +9,25 @@ type Client = {
 };
 
 const clients: Client[] = [
-  { name: "טיפטוף", instagram: "https://www.instagram.com/tiftuf.gardening.center/", logo: clientTiptop },
-  { name: "גנים טובים", instagram: "https://instagram.com/", logo: clientGanimTovim },
-  { name: "Client 3", instagram: "https://instagram.com/" },
-  { name: "Client 4", instagram: "https://instagram.com/" },
-  { name: "Client 5", instagram: "https://instagram.com/" },
-  { name: "Client 6", instagram: "https://instagram.com/" },
-  { name: "Client 7", instagram: "https://instagram.com/" },
-  { name: "Client 8", instagram: "https://instagram.com/" },
-];
+{ name: "טיפטוף", instagram: "https://www.instagram.com/tiftuf.gardening.center/", logo: clientTiptop },
+{ name: "גנים טובים", instagram: "https://instagram.com/", logo: clientGanimTovim },
+{ name: "Client 3", instagram: "https://instagram.com/" },
+{ name: "Client 4", instagram: "https://instagram.com/" },
+{ name: "Client 5", instagram: "https://instagram.com/" },
+{ name: "Client 6", instagram: "https://instagram.com/" },
+{ name: "Client 7", instagram: "https://instagram.com/" },
+{ name: "Client 8", instagram: "https://instagram.com/" }];
 
-const ClientLogo = ({ client }: { client: Client }) => (
-  <div className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-muted border border-border flex items-center justify-center shrink-0 p-3">
-    {client.logo ? (
-      <img src={client.logo} alt={client.name} className="w-full h-full object-contain" />
-    ) : (
-      <span className="text-xs text-muted-foreground font-medium">{client.name}</span>
-    )}
-  </div>
-);
+
+const ClientLogo = ({ client }: {client: Client;}) =>
+<div className="w-24 h-24 md:w-28 md:h-28 rounded-xl bg-muted border-border shrink-0 p-3 px-[2px] py-px shadow-2xl border-0 flex items-center justify-center">
+    {client.logo ?
+  <img src={client.logo} alt={client.name} className="w-full h-full object-contain" /> :
+
+  <span className="text-xs text-muted-foreground font-medium">{client.name}</span>
+  }
+  </div>;
+
 
 const ClientsBar = () => {
   const doubled = [...clients, ...clients];
@@ -53,25 +53,25 @@ const ClientsBar = () => {
               repeat: Infinity,
               repeatType: "loop",
               duration: 25,
-              ease: "linear",
-            },
-          }}
-        >
-          {doubled.map((client, i) => (
-            <a
-              key={i}
-              href={client.instagram}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="opacity-70 hover:opacity-100 transition-all duration-500 ease-out shrink-0"
-            >
+              ease: "linear"
+            }
+          }}>
+          
+          {doubled.map((client, i) =>
+          <a
+            key={i}
+            href={client.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="opacity-70 hover:opacity-100 transition-all duration-500 ease-out shrink-0">
+            
               <ClientLogo client={client} />
             </a>
-          ))}
+          )}
         </motion.div>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default ClientsBar;
