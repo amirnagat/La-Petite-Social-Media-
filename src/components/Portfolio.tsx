@@ -1,11 +1,20 @@
 import { motion } from "framer-motion";
 
-const categories = ["Reels", "עיצוב פיד", "אסטרטגיה"];
+interface PortfolioItem {
+  id: number;
+  category: string;
+  type: "placeholder" | "video";
+  src?: string;
+}
 
-const items = Array.from({ length: 6 }, (_, i) => ({
-  id: i,
-  category: categories[i % 3],
-}));
+const items: PortfolioItem[] = [
+  { id: 0, category: "Reels", type: "video", src: "/videos/portfolio-1.mp4" },
+  { id: 1, category: "עיצוב פיד", type: "placeholder" },
+  { id: 2, category: "אסטרטגיה", type: "placeholder" },
+  { id: 3, category: "Reels", type: "placeholder" },
+  { id: 4, category: "עיצוב פיד", type: "placeholder" },
+  { id: 5, category: "אסטרטגיה", type: "placeholder" },
+];
 
 const Portfolio = () => (
   <section className="py-24">
@@ -29,6 +38,16 @@ const Portfolio = () => (
             whileHover={{ y: -6 }}
             className="group relative aspect-square bg-secondary rounded-xl overflow-hidden cursor-pointer"
           >
+            {item.type === "video" && item.src && (
+              <video
+                src={item.src}
+                className="absolute inset-0 w-full h-full object-cover"
+                muted
+                loop
+                playsInline
+                autoPlay
+              />
+            )}
             <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/80 transition-all duration-300 flex items-center justify-center">
               <span className="text-primary-foreground font-semibold text-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                 {item.category}
