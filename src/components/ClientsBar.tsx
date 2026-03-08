@@ -11,7 +11,7 @@ type Client = {
 
 const clients: Client[] = [
 { name: "טיפטוף", instagram: "https://www.instagram.com/tiftuf.gardening.center/", logo: clientTiptop },
-{ name: "גנים טובים", instagram: "https://instagram.com/", logo: clientGanimTovim }];
+{ name: "גנים טובים", instagram: "https://www.instagram.com/good.brca.genes/", logo: clientGanimTovim }];
 
 
 const ClientLogo = ({ client }: {client: Client;}) =>
