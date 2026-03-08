@@ -31,6 +31,7 @@ const ClientLogo = ({ client }: {client: Client;}) =>
 
 const ClientsBar = () => {
   const doubled = [...clients, ...clients];
+  const [isPaused, setIsPaused] = useState(false);
 
   return (
     <section className="py-12 md:py-16 overflow-hidden">
@@ -40,7 +41,11 @@ const ClientsBar = () => {
         </h3>
       </div>
 
-      <div className="relative">
+      <div
+        className="relative"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {/* Fade edges */}
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
@@ -55,8 +60,10 @@ const ClientsBar = () => {
               duration: 25,
               ease: "linear"
             }
-          }}>
-          
+          }}
+          style={{ animationPlayState: isPaused ? "paused" : "running" }}
+          {...(isPaused && { animate: undefined })}
+        >
           {doubled.map((client, i) =>
           <a
             key={i}
@@ -64,14 +71,12 @@ const ClientsBar = () => {
             target="_blank"
             rel="noopener noreferrer"
             className="opacity-70 hover:opacity-100 transition-all duration-500 ease-out shrink-0">
-            
               <ClientLogo client={client} />
             </a>
           )}
         </motion.div>
       </div>
     </section>);
-
 };
 
 export default ClientsBar;
