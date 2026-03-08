@@ -4,13 +4,13 @@ import logo from "@/assets/logo.png";
 const Hero = () =>
 <section className="min-h-screen flex items-center justify-center pt-16">
     <div className="container text-center border-secondary">
-      <motion.img
+      
 
-      alt="La'petite Social Media"
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      transition={{ duration: 0.6 }}
-      className="h-44 md:h-60 mx-auto mb-10 shadow-none object-contain" src="/lovable-uploads/8f9a6f45-642c-423a-9625-d3cbee69f8fd.png" />
+
+
+
+
+    
     
       <motion.h1
       initial={{ opacity: 0, y: 30 }}
