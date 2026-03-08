@@ -62,7 +62,7 @@ const ClientsBar = () => {
               href={client.instagram}
               target="_blank"
               rel="noopener noreferrer"
-              className="grayscale opacity-60 hover:grayscale-0 hover:opacity-100 transition-all duration-500 ease-out shrink-0"
+              className="opacity-70 hover:opacity-100 transition-all duration-500 ease-out shrink-0"
             >
               <ClientLogo client={client} />
             </a>
