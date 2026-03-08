@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-
+import { useRef, useCallback } from "react";
 interface PortfolioItem {
   id: number;
   category: string;
