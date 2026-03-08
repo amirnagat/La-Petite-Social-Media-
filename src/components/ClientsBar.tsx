@@ -38,23 +38,23 @@ const ClientsBar = () => {
     <section className="py-12 md:py-16 overflow-hidden">
       <div className="container mb-8">
         <h3 className="text-sm font-semibold tracking-widest text-muted-foreground uppercase text-center">
-          הלקוחות שלי
+          הלקוחות שלנו
         </h3>
       </div>
 
       <div
         className="relative"
         onMouseEnter={() => setIsPaused(true)}
-        onMouseLeave={() => setIsPaused(false)}>
-        
+        onMouseLeave={() => setIsPaused(false)}
+      >
         {/* Fade edges */}
         <div className="absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
         <div className="absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
 
         <div
           className="flex gap-6 w-max animate-marquee"
-          style={{ animationPlayState: isPaused ? "paused" : "running" }}>
-          
+          style={{ animationPlayState: isPaused ? "paused" : "running" }}
+        >
           {doubled.map((client, i) =>
           <a
             key={i}
