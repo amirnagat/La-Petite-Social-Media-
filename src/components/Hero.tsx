@@ -1,5 +1,5 @@
-import { motion } from "framer-motion";
-import socialIcons from "@/assets/social-icons.png";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { ChevronDown } from "lucide-react";
 
 const Hero = () =>
 <section className="min-h-screen flex items-center justify-center pt-16">
