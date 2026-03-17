@@ -50,7 +50,7 @@ const Hero = () => {
             style={{ opacity: arrowOpacity }}
             className="mt-6 flex justify-center"
           >
-            <ChevronDown className="w-6 h-6 text-muted-foreground/50 animate-[scroll-bounce_2.5s_ease-in-out_infinite]" />
+            <ChevronDown className="w-10 h-10 text-foreground/70 animate-[scroll-bounce_2.5s_ease-in-out_infinite] stroke-[2.5]" />
           </motion.div>
         </div>
         <motion.div
