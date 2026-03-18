@@ -43,8 +43,10 @@ const PortfolioVideo = ({ src }: { src: string }) => {
       src={src}
       className="absolute inset-0 w-full h-full object-cover"
       muted
+      autoPlay
       loop
       playsInline
+      preload="auto"
       onClick={handleClick}
     />
   );
