@@ -46,8 +46,9 @@ const Footer = () => {
             className="w-full bg-background border border-border rounded-lg px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
           />
           <textarea
-            placeholder="ספרו לנו על העסק שלכם"
+            placeholder="ספרו לנו על העסק שלכם *"
             rows={4}
+            required
             value={form.message}
             onChange={(e) => setForm({ ...form, message: e.target.value })}
             className="w-full bg-background border border-border rounded-lg px-5 py-3.5 text-sm focus:outline-none focus:ring-2 focus:ring-ring resize-none"
