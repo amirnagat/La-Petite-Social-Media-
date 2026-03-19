@@ -35,7 +35,7 @@ const AboutMe = () => (
             קצת עליי
           </span>
           <h2 className="text-3xl md:text-4xl font-extrabold leading-tight text-foreground">
-            נעים מאוד, אני עמית דסה
+            נעים מאוד, אני עמית
           </h2>
           <p className="text-lg md:text-xl font-semibold text-foreground/80">
             חלק מהצוות שלך, לא רק ספק חיצוני.
