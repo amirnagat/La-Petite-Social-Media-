@@ -854,7 +854,12 @@
                 statusEl.textContent = 'הפנייה נשלחה בהצלחה! נחזור אלייך בהקדם.';
                 statusEl.style.color = 'var(--espresso)';
                 form.reset();
+              } else if (data.message && /activat/i.test(data.message)) {
+                statusEl.textContent = 'הטופס ממתין להפעלה: נשלח מייל אישור לכתובת של העסק. אחרי לחיצה על Activate Form במייל, הפניות יגיעו.';
+                statusEl.style.color = 'var(--wine)';
+                console.warn('FormSubmit:', data.message);
               } else {
+                console.warn('FormSubmit:', data);
                 throw new Error(data.message || 'שגיאה בשליחה');
               }
             } catch (err) {
