@@ -217,6 +217,25 @@
   #a11yStatementModal p, #a11yStatementModal li{font-size:.92rem}
   #a11yStatementModal ul{padding-right:20px;list-style:disc}
   #a11yStatementModal .a11y-modal-close{position:absolute;top:16px;left:16px;width:34px;height:34px;border-radius:9999px;border:1px solid rgba(0,0,0,.15);background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+
+/* contact form: success animation */
+.form-success{position:absolute;inset:0;z-index:5;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem;background:var(--cream);animation:fsIn .45s ease both}
+.form-success.fs-out{animation:fsOut .35s ease both}
+.form-success .fs-inner{display:flex;flex-direction:column;align-items:center;gap:.75rem}
+.form-success .fs-check{color:var(--wine);margin-bottom:.5rem}
+.form-success .fs-ring{stroke-dasharray:227;stroke-dashoffset:227;animation:fsDraw .7s .15s cubic-bezier(.65,0,.35,1) forwards;transform-origin:center}
+.form-success .fs-tick{stroke-dasharray:50;stroke-dashoffset:50;animation:fsDraw .45s .75s cubic-bezier(.65,0,.35,1) forwards}
+.form-success .fs-check{animation:fsPop .5s 1.1s ease both}
+.form-success .fs-title{font-size:1.75rem;color:var(--espresso);animation:fsUp .5s .9s ease both}
+.form-success .fs-text{color:var(--espresso);opacity:.7;animation:fsUp .5s 1s ease both}
+.form-success .fs-again{margin-top:1rem;padding:.7rem 1.6rem;border-radius:9999px;border:1px solid var(--taupe);color:var(--espresso);font-size:.875rem;letter-spacing:.05em;background:transparent;transition:background .2s,color .2s;animation:fsUp .5s 1.1s ease both}
+.form-success .fs-again:hover,.form-success .fs-again:focus-visible{background:var(--wine);color:var(--cream);border-color:var(--wine)}
+@keyframes fsIn{from{opacity:0}to{opacity:1}}
+@keyframes fsOut{from{opacity:1}to{opacity:0}}
+@keyframes fsDraw{to{stroke-dashoffset:0}}
+@keyframes fsUp{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes fsPop{0%{transform:scale(1)}40%{transform:scale(1.08)}100%{transform:scale(1)}}
+@media (prefers-reduced-motion: reduce){.form-success,.form-success *{animation:none!important}.form-success .fs-ring,.form-success .fs-tick{stroke-dashoffset:0}}
 </style>
 <!-- Vercel Web Analytics -->
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
@@ -765,7 +784,7 @@
     </div>
 
     <div class="lg:col-span-7 reveal" style="transition-delay:.1s">
-      <form id="contactForm" class="bg-[var(--cream)] rounded-[2rem] p-9 lg:p-12 border border-[var(--taupe)]/30">
+      <form id="contactForm" class="relative overflow-hidden bg-[var(--cream)] rounded-[2rem] p-9 lg:p-12 border border-[var(--taupe)]/30">
         <input type="hidden" name="_subject" value="פנייה חדשה מהאתר — La' petite">
         <input type="hidden" name="_template" value="table">
         <input type="hidden" name="_captcha" value="false">
@@ -838,6 +857,29 @@
           if (btn) btn.addEventListener('click', function () {
             form.querySelectorAll('input, select, textarea').forEach(function (f) { f.setCustomValidity(''); });
           });
+          function showFormSuccess() {
+            var old = form.querySelector('.form-success'); if (old) old.remove();
+            var s = document.createElement('div');
+            s.className = 'form-success';
+            s.setAttribute('role', 'status');
+            s.setAttribute('aria-live', 'polite');
+            s.innerHTML =
+              '<div class="fs-inner">' +
+                '<svg class="fs-check" viewBox="0 0 80 80" width="88" height="88" aria-hidden="true">' +
+                  '<circle class="fs-ring" cx="40" cy="40" r="36" fill="none" stroke="currentColor" stroke-width="3"/>' +
+                  '<path class="fs-tick" d="M25 41 l10 10 l20 -22" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>' +
+                '</svg>' +
+                '<p class="fs-title font-display">תודה! הפנייה התקבלה</p>' +
+                '<p class="fs-text">עמית תחזור אלייך בהקדם.</p>' +
+                '<button type="button" class="fs-again">שליחת פנייה נוספת</button>' +
+              '</div>';
+            form.appendChild(s);
+            s.querySelector('.fs-again').addEventListener('click', function () {
+              s.classList.add('fs-out');
+              setTimeout(function () { s.remove(); var f = form.querySelector('input[name="name"]'); if (f) f.focus(); }, 350);
+            });
+            setTimeout(function () { s.querySelector('.fs-again').focus({ preventScroll: true }); }, 900);
+          }
           form.addEventListener('submit', async function (e) {
             e.preventDefault();
             btn.disabled = true;
@@ -851,9 +893,9 @@
               });
               const data = await res.json();
               if (data.success === true || data.success === 'true') {
-                statusEl.textContent = 'הפנייה נשלחה בהצלחה! נחזור אלייך בהקדם.';
-                statusEl.style.color = 'var(--espresso)';
+                statusEl.textContent = '';
                 form.reset();
+                showFormSuccess();
               } else if (data.message && /activat/i.test(data.message)) {
                 statusEl.textContent = 'הטופס ממתין להפעלה: נשלח מייל אישור לכתובת של העסק. אחרי לחיצה על Activate Form במייל, הפניות יגיעו.';
                 statusEl.style.color = 'var(--wine)';
